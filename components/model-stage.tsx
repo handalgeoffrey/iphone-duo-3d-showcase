@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { useProgress } from '@react-three/drei';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
@@ -8,7 +7,6 @@ import * as THREE from 'three';
 import { DuoModel } from '@/components/three/duo-model';
 import { StudioLighting } from '@/components/three/studio-lighting';
 import { useVariant } from '@/components/variant-provider';
-import { assetPath } from '@/lib/asset-path';
 import {
   CLOSED_CENTER_SHIFT,
   clamp,
@@ -377,7 +375,6 @@ export function ModelStage() {
   );
 
   const loading = !hasLoaded || progress < 100;
-  const poster = assetPath('/poster.png');
 
   return (
     <>
@@ -385,21 +382,6 @@ export function ModelStage() {
         className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
         aria-hidden={active === 'hidden'}
       >
-        <div
-          className={`absolute inset-0 transition-opacity duration-700 ease-apple ${
-            hasLoaded ? 'opacity-0' : 'opacity-100'
-          }`}
-        >
-          <Image
-            src={poster}
-            alt={`iPhone Duo in ${meta.name}, closed, showing the cover display`}
-            fill
-            priority
-            sizes="100vw"
-            className="object-contain"
-          />
-        </div>
-
         {supported ? (
           <div
             role="img"
