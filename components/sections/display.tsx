@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { assetPath } from '@/lib/asset-path';
 import { DISPLAY } from '@/lib/site-content';
 
 export function Display() {
@@ -30,7 +31,7 @@ export function Display() {
             <div className="rounded-[34px] bg-[#0a0a0c] p-[6px] sm:p-[8px]">
               <div className="relative aspect-[1.42/1] overflow-hidden rounded-[28px] bg-black">
                 <Image
-                  src="/textures/inner-display.jpg"
+                  src={assetPath('/textures/inner-display.jpg')}
                   alt={DISPLAY.imageAlt}
                   fill
                   sizes="(min-width: 1200px) 1000px, calc(100vw - 40px)"

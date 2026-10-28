@@ -8,6 +8,7 @@ import * as THREE from 'three';
 import { DuoModel } from '@/components/three/duo-model';
 import { StudioLighting } from '@/components/three/studio-lighting';
 import { useVariant } from '@/components/variant-provider';
+import { assetPath } from '@/lib/asset-path';
 import {
   CLOSED_CENTER_SHIFT,
   clamp,
@@ -376,7 +377,7 @@ export function ModelStage() {
   );
 
   const loading = !hasLoaded || progress < 100;
-  const poster = variant === 'night' ? '/duo-poster-night.png' : '/duo-poster-white.png';
+  const poster = assetPath('/poster.png');
 
   return (
     <>

@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { assetPath } from '@/lib/asset-path';
 import { useVariant } from '@/components/variant-provider';
 import { COMPARE } from '@/lib/site-content';
 import type { Variant } from '@/lib/variants';
@@ -93,7 +94,7 @@ export function Compare() {
                   >
                     <div className="relative aspect-[0.7/1] overflow-hidden rounded-[2rem] bg-black">
                       <Image
-                        src="/textures/outer-display.jpg"
+                        src={assetPath('/textures/outer-display.jpg')}
                         alt={`${card.name} cover display showing an abstract wallpaper`}
                         fill
                         sizes="190px"

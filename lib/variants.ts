@@ -1,3 +1,5 @@
+import { assetPath } from '@/lib/asset-path';
+
 export type Variant = 'white' | 'night';
 
 export interface VariantMeta {
@@ -17,7 +19,7 @@ export const VARIANTS: Record<Variant, VariantMeta> = {
   white: {
     id: 'white',
     name: 'Starry White',
-    model: '/models/starry-white.glb',
+    model: assetPath('/models/starry-white.glb'),
     swatch: '#e9e6e1',
     swatchBorder: '#c9c3ba',
     tagline: 'Warm light. Quiet confidence.',
@@ -29,7 +31,7 @@ export const VARIANTS: Record<Variant, VariantMeta> = {
   night: {
     id: 'night',
     name: 'Night Sky',
-    model: '/models/night-sky.glb',
+    model: assetPath('/models/night-sky.glb'),
     swatch: '#14161d',
     swatchBorder: '#3b4050',
     tagline: 'Deep calm. After hours.',
